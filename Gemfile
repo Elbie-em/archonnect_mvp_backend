@@ -63,3 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Gems added in development
 gem 'rubocop', '~>0.81.0'
+
+gem 'bcrypt', '~> 3.1', '>= 3.1.16'
+gem 'rack-cors', :require => 'rack/cors'
+gem 'active_model_serializers', '~> 0.10.0'
