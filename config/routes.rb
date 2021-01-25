@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       delete :logout, to: "sessions#logout"
       get :logged_in, to: "sessions#logged_in"
       resources :plans, only:[:index]
+      resources :favourites, only:[:index,:create]
     end
   end
 end
