@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :sessions, only: [:create]
       resources :registrations, only: [:create]
+      get '/registrations/:email/(.:format)', to: "registrations#show"
       delete :logout, to: "sessions#logout"
       get :logged_in, to: "sessions#logged_in"
       resources :plans, only:[:index]
