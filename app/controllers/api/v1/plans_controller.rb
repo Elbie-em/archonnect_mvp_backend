@@ -8,12 +8,12 @@ module Api
         if @plans
           render json: {
             status: 200,
-            data: @plans
+            result: @plans
           }
         else
           render json: {
             status: 404,
-            data: []
+            result: []
           }
         end
 
