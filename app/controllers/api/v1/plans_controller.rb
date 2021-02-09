@@ -5,18 +5,34 @@ module Api
       def index
         @plans = Plan.all
 
-        if @plans
+        if @plans && @current_user
           render json: {
             status: 200,
             result: @plans
           }
         else
           render json: {
-            status: 404,
-            result: []
+            status: 401,
+            result: [],
           }
         end
 
+      end
+
+      def show
+        plan = Plan.find(params[:id])
+        
+        if plan && @current_user
+          render json: {
+            status: 202,
+            result: plan
+          }
+        else
+          render json: {
+            status: 401,
+            result: [],
+          }
+        end
       end
     end
   end
