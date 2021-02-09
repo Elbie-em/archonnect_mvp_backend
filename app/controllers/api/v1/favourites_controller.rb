@@ -9,29 +9,38 @@ module Api
           
           render json: {
             status: 200,
-            data: @favourites
+            result: @favourites
           }
         else
           render json: {
-            status: 404,
-            data: []
+            status: 401,
+            result: []
           }
         end
       end
 
       def create
-        favourite = Favourite.create(
-          user_id: params['data']['user_id'],
-          plan_id: params['data']['plan_id'],
-        )
+        user_id = params['data']['user_id']
+        plan_id = params['data']['plan_id']
 
-        if favourite
+        favourite_exists = Favourite.where(user_id:user_id,plan_id:plan_id).exists?
+
+        if !favourite_exists
+          favourite = Favourite.create(
+            user_id: params['data']['user_id'],
+            plan_id: params['data']['plan_id'],
+          )
+
           render json: {
-            status: :created,
-            favourite: favourite
+            status: 202,
+            favourite: favourite,
+            message: "House plan added to favourites successfully."
           }
         else
-          render json: {status: 500}
+          render json: {
+            status: 500,
+            message: "You already have this entry saved in favourites."
+          }
         end
       end
     end
