@@ -13,15 +13,14 @@ module Api
         else
           render json: {
             status: 401,
-            result: [],
+            result: []
           }
         end
-
       end
 
       def show
         plan = Plan.find(params[:id])
-        
+
         if plan && @current_user
           render json: {
             status: 202,
@@ -30,7 +29,7 @@ module Api
         else
           render json: {
             status: 401,
-            result: [],
+            result: []
           }
         end
       end

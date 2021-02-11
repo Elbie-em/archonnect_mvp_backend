@@ -16,7 +16,7 @@ module Api
           }
         elsif !user
           render json: {
-            status: 500,
+            status: 500
           }
         end
       end
@@ -40,6 +40,3 @@ module Api
     end
   end
 end
-
-
-

@@ -5,8 +5,8 @@ module Api
       def index
         if @current_user
           user = @current_user
-          @favourites = user.plans.all 
-          
+          @favourites = user.plans.all
+
           render json: {
             status: 200,
             result: @favourites
@@ -23,28 +23,26 @@ module Api
         user_id = params['data']['user_id']
         plan_id = params['data']['plan_id']
 
-        favourite_exists = Favourite.where(user_id:user_id,plan_id:plan_id).exists?
+        favourite_exists = Favourite.where(user_id: user_id, plan_id: plan_id).exists?
 
         if !favourite_exists
           favourite = Favourite.create(
             user_id: params['data']['user_id'],
-            plan_id: params['data']['plan_id'],
+            plan_id: params['data']['plan_id']
           )
 
           render json: {
             status: 202,
             favourite: favourite,
-            message: "House plan added to favourites successfully."
+            message: 'House plan added to favourites successfully.'
           }
         else
           render json: {
             status: 500,
-            message: "You already have this entry saved in favourites."
+            message: 'You already have this entry saved in favourites.'
           }
         end
       end
     end
   end
 end
-
-
