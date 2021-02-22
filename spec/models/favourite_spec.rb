@@ -7,5 +7,4 @@ RSpec.describe Favourite, type: :model do
       it { should belong_to(:plan) }
     end
   end
-
 end

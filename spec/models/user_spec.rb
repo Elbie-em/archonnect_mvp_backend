@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { User.create!(email: 'johndoe@example.com', password: 'password',password_confirmation: 'password') }
+  let(:user) { User.create!(email: 'johndoe@example.com', password: 'password', password_confirmation: 'password') }
 
   it 'is valid with valid attributes' do
     expect(user).to be_valid
@@ -24,5 +24,4 @@ RSpec.describe User, type: :model do
       it { should have_many(:plans) }
     end
   end
-
 end

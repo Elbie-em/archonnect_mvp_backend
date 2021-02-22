@@ -39,8 +39,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails', ">= 3.9.0"
   gem 'database_cleaner'
+  gem 'rspec-rails', '>= 3.9.0'
   gem 'shoulda-matchers'
 end
 
@@ -67,10 +67,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Gems added in development
 gem 'rubocop', '~>0.81.0'
 
-gem 'activeadmin'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'activeadmin'
 gem 'bcrypt', '~> 3.1', '>= 3.1.16'
 gem 'devise'
 gem 'rack-cors', require: 'rack/cors'
-
-
