@@ -30,7 +30,7 @@
   - **Database Migration**: run *$ rails db:migrate* in terminal to run database migrations on your local machine
 ```
 
-### Usage
+## Usage
 Start server with:
 
 ```
@@ -38,6 +38,21 @@ Start server with:
 ```
 
 Open `http://localhost:3001/` in your browser.
+
+## Active Admin
+
+This feature allows you to create house plan entries from an admin dashboard. To use this feature
+
+```
+    Create seed data for the Admin user in **db/seeds.rb** 
+      e.g AdminUser.create!(email: 'admin@example.com', password: 'asdfasdf', password: 'asdfasf')
+
+    Run rails db:seed after running migrations
+
+
+    Open `http://localhost:3001/admin` in your browser and log in with seed credentials
+
+```
 
 ### Testing
 
