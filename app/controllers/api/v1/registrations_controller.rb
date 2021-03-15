@@ -8,13 +8,13 @@ module Api
           password_confirmation: params['user']['password_confirmation']
         )
 
-        if user
+        if user.valid?
           session[:current_user_id] = user.id
           render json: {
             status: :created,
             user: user
           }
-        elsif !user
+        elsif !user.valid?
           render json: {
             status: 500
           }
