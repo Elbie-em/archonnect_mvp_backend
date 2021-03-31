@@ -1,24 +1,108 @@
-# README
+# Archonnect API Server
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> A Rails API end-point application consisting of a listing of house plans by freelance architects that are up for bidding.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby v2.7.2
+- Ruby on Rails v5.2.4.4
+- PostgreSQL 12.4
+- VSCode
+- Terminal
+- Rubocop
+- RSpec
+- Active Admin
 
-* System dependencies
+## Server
 
-* Configuration
+[API](https://api-archonnect-mvp.herokuapp.com)
 
-* Database creation
+## Setup
 
-* Database initialization
+```
+  - **Terminal(Mac & Linux) or Command Prompt(Windows)**: This is where you will run all commands.
+  - **Clone**: clone this repository to your local machine.
+  - **Ruby Enviroment**: if you do not have ruby installed visit this [link](https://www.ruby-lang.org/en/documentation/installation/) to install.
+  - **PostgresSQL**: if you do not have postgreSql installed visit this [link](https://www.postgresql.org/) to install.
+  - **Rails**: install rails gem by running command *$ gem install rails* -v 5.2.4 in your terminal.
+  - **bundle**: run $ bundle install. This installs all gems declared in the Gemfile
+  - **Database Creation**: run *$ rails db:create* in the terminal to create database on your local machine
+  - **Database Migration**: run *$ rails db:migrate* in terminal to run database migrations on your local machine
+```
 
-* How to run the test suite
+## Usage
+Start server with:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+    rails server -p 3001
+```
 
-* Deployment instructions
+Open `http://localhost:3001/` in your browser.
 
-* ...
+## Active Admin
+
+This feature allows you to create house plan entries from an admin dashboard. To use this feature
+
+```
+    Create seed data for the Admin user in **db/seeds.rb** 
+      e.g AdminUser.create!(email: 'admin@example.com', password: 'asdfasdf', password: 'asdfasf')
+
+    Run rails db:seed after running migrations
+
+
+    Open `http://localhost:3001/admin` in your browser and log in with seed credentials
+
+```
+
+### Testing
+
+```
+    bundle exec rspec
+```
+
+### Deployment
+
+> To deploy heroku 
+  - Create a heroku account [here](https://www.heroku.com/)
+  - In your root folder run the following commands
+  ```
+   $ heroku login: Log into heroku CLI in your browser
+   $ heroku create
+   $ git push heroku master
+   $ heroku run rails db:migrate
+   $ heroku run rails c: "Create your entries with rails console commands"
+  ```
+
+
+## Authors ![Hireable](https://img.shields.io/badge/HIREABLE-YES-yellowgreen&?style=for-the-badge)
+
+👤 **Elbie Moonga**
+
+- GitHub: [@Elbie-Em](https://github.com/Elbie-em)
+- Twitter: [ElbieEm](https://twitter.com/ElbieEm)
+- LinkedIn: [elbie-moonga](https://www.linkedin.com/in/elbiemoonga) 
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Elbie-em/archonnect_mvp_backend/issues).
+
+## Show your support
+
+Give me a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [Microverse](https://microverse.org)
+
+---
+
+## 📝 License
+
+This project is [MIT](/LICENSE) licensed.
+
+---
+
